@@ -51,4 +51,27 @@ public class UserController {
     return ("All Users had been successfully deleted");
     }
 
+    @GetMapping("update/{userId}")
+    public @ResponseBody User updateUser(@PathVariable Integer userId, @RequestParam(required = false) String name, @RequestParam(required = false) String email) {
+        Optional<User> byId = userRepository.findById(userId);
+        if(byId.isPresent()) {
+            User user = byId.get();
+            user.setUserName(name)
+            user.setUserEmail(email);
+            userRepository.save(user);
+            return user;
+        } else {
+            return ("This User doesn't exist");
+        }
+    }
+
+    @GetMapping("{userId}")
+    public @ResponseBody Optional<User> getUser(@PathVariable Integer userId){
+        if(userRepository.existsById(userId)){
+            return userRepository.findById(userId);
+        } else {
+            return ("This User doesn't exist");
+        }
+    }
+
 }
