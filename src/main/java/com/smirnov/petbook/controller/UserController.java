@@ -1,12 +1,11 @@
-package com.smirnov.petbook;
+package com.smirnov.petbook.controller;
 
-import org.hibernate.sql.Delete;
+import com.smirnov.petbook.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
-import com.smirnov.petbook.User;
-import com.smirnov.petbook.UserRepository;
+import com.smirnov.petbook.entity.User;
 
 import java.util.Optional;
 

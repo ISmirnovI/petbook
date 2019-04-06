@@ -1,4 +1,4 @@
-package com.smirnov.petbook;
+package com.smirnov.petbook.entity;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
